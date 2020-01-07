@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <title>The face recognition game </title>
+  </head>
+  <body>
+    <div class="container">
+        <h1> PROJECTS </h1>
+        <h2> The face recognition game </h2>
+        <p> Letting people explore what parts of a face are important for a face recognition system by making them wear funny masks.  </p>
+
+        <ul>
+          <li> <a href="/projects/face_recognition_game/introduction"> <b> Part I: Introduction</b>  </a> </li>
+          <li> Part II: Running the game at KI&Wir Magdeburg </li>
+          <li> Part III: Technical details of the implementation  </li>
+        </ul>
+
+        <h3> Artificial intelligence? </h3>
+        <p> When interacting with a so-called artificial intelligence system, it is hard for us not to ascribe to the machine a human-like perception and 
+            human-like reasoning. In reality, current (machine-learning based) AI systems do not possess any human-like intelligence. A computer vision 
+            system has no abstract idea of what a cat is, it is not be able to make the connection from real-life images of cats to a child’s drawing of a cat. </p> 
+        
+       <p> If we are to be dependent on decisions taken by machines, it is imperative for us to understand how they “think”. Only if we can understand 
+           artificial perception and artificial reasoning can we really interact with such systems responsibly. </p>
+       
+       <h3> Exploring face recognition </h3> 
+       <p> This installation allows people to explore the decision making process of a face recognition system &mdash; which parts of the face are most important for such a machine? </p>
+
+       <p> [gif of using the system here] </p> 
+      
+       <p> Many of us are already subject to automatic decision making by face recognition systems, from voluntary and low impact (unlocking your phone with Face ID) 
+           to unavoidable and potentially high-impact (surveillance of public and private spaces). </p>
+
+       <p> We rarely take the time (or the risk) of trying to fool the machine, of trying to not be recognized or to be recognized as somebody else. But it is just this
+           exploration of the not-normal that can give us insights into how the machine works.
+       
+       <h3> How it works </h3> 
+       <p> The installation consists of a screen with an attached camera, functioning as a mirror. The first time a visitor steps in front of the screen and presses the 
+           "Registration" button, their facial features (a face-print, similar to a finger-print) as well as an image of their face are added to an internal database.  
+            From then on, a bubble with their registration image will appear over their head whenever they have been recognized by the system. A star-rating of 1 to 3 stars 
+            signals the strength of the face match (3 stars = most similar). </h3> 
+
+       <p> The visitor’s task is now to fool the system, to decrease the number of stars or to no longer be recognized at all. They can do this by rotating their head,
+           by hiding parts of their face with their hands or with the supplied masks (glasses of different shapes and transparency, clown noses, beards and mustaches, etc). 
+           Since the masks hide/manipulate different parts of the face, playing this game can help understand which parts of the face the machine “looks at” when making decisions. </p>
+
+       <p> [img of masks here] </p>
+
+       <h3> Inspiration </h3>
+
+       <p> This work is just one of many in a large body of research on AI interpretability. It was inspired by Adam Geitgey’s fantastic tutorial
+            <a href=”https://medium.com/@ageitgey/build-a-hardware-based-face-recognition-system-for-150-with-the-nvidia-jetson-nano-and-python-a25cb8c891fd”> Build a Hardware-based 
+            Face Recognition System for $150 with the Nvidia Jetson Nano and Python </a>. </p>
+
+       <h3> Further reading </h3> 
+      
+        <ul>
+          <li> Part II: Running the installation at KI&Wir Magdeburg </li>
+          <li> Part III: Technical details of the implementation  </li>
+        </ul>
+
+       <a href="/"> home </a>
+
+   </div>
+  </body>
+</html>
