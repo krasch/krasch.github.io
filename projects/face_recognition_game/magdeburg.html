@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/projects/face_recognition_game/style.css">
+    <title>The face recognition game </title>
+  </head>
+  <body>
+    <div class="container">
+        <h1> PROJECTS </h1>
+        <h2> The face recognition game </h2>
+        <p> <i> Letting people explore what parts of a face are important for a face recognition system by making them wear funny masks. </i> </p>
+
+        <ul>
+          <li> <a href="/projects/face_recognition_game"> Part I: Introduction </a> </li>
+          <li> <a href="/projects/face_recognition_game/magdeburg.html"> <b> Part II: Running the game at KI&Wir Magdeburg </b>  </a> </li>
+          <li> Part III: Technical details of the implementation  </li>
+        </ul>
+
+        <h3> Running the game at KI&Wir Magdeburg </h3>
+        <p> The face recognition game was tested at KI & Wir*, a conference in Magdeburg, Germany aimed at the general public, with many visitors having non-technical
+             backgrounds but an interest in learning about AI and its impact on society. </p>
+
+        <p> Over the two days of the conference, 140 people visited the booth. They played the game for three minutes on average. Many stayed around afterwards to 
+            learn more about how face recognition works and discuss its uses. </p> 
+
+
+                     <img src="/projects/face_recognition_game/magdeburg.jpg" alt="Visitor playing the face recognition game">
+
+        <h3> Bad lighting conditions </h3> 
+
+        <p> The conference took place in a brick building built in the 19th century for military purposes. It features few windows, very little daylight and long dark 
+            corridors. Artificial lighting helped brighten up my booth, but only in some spots, resulting in shadows on the visitors’ faces. All in all, a rather different
+            (but more realistic) situation than the window desk in my office where I developed and tested the game. </p> 
+
+        <h3> Positive feedback </h3>
+
+        <p> Reminder: the mission of the game is to try to not be recognized by wearing different masks (and thereby understanding which parts of the face the machine 
+            "looks at" when recognizing people). The face recognition was noticeably weaker under the given lighting conditions, being defeated by masks that were not 
+            any challenge in better lighting. However, the general properties of the masks still held true: masking the eyes is often a stronger disguise than masking 
+            your nose or mouth, turning your head decreases the match quality surprisingly much, whereas masking any parts of your face outside of eyes, nose and mouth does not do much. </p> 
+
+        <p> In my conversations with visitors, I did receive positive feedback &mdash; people found the game interesting to play and it did give them insights into how the machine "sees". </p> 
+        
+        <h3> Parents mixed-up with their children </h3>
+
+        <p> One thing I was surprised about was the face recognition system being able to pick up on the facial similarities between children and their parents. 
+            It happened several times that children would be displayed as one of the people most similar to one of their parents (resulting in much laughter from
+            the whole family, usually). </p> 
+
+        <p> Interestingly, this never happened the other way around; the most similar person to a child (besides the child itself) 
+            was typically another child, not the child’s parents. Generally, I could observe what Adam Geitgey also noted in his 
+            <a href=”https://medium.com/@ageitgey/build-a-hardware-based-face-recognition-system-for-150-with-the-nvidia-jetson-nano-and-python-a25cb8c891fd”>original blog post</a>: children 
+            (even unrelated ones) can not be very well distinguished from each other by this machine. </p> 
+           
+        <p> I will analyze these observations further in the third part of this blog post. </p> 
+
+        <h3> Further reading </h3> 
+      
+        <ul>
+          <li> Part III: Technical details of the implementation</li>
+        </ul>
+
+        <img src="/projects/face_recognition_game/BMBF_gefoerdert_2017_en.png" alt="Logo of BMBF" class="imgbmbf"/>
+
+       <a href="/"> home </a>
+
+   </div>
+  </body>
+</html>
