@@ -1,3 +1,5 @@
+/* ***************************************** CONTAINERS *****************************************/
+
 body {
   display: flex;
   flex-direction: column;
@@ -7,8 +9,8 @@ body {
   font-family: helvetica, arial, sans-serif;
   color: #222;
 
-  max-width: 600px;
-  margin-bottom: 50px;
+  max-width: 40rem;
+  margin-bottom: 3rem;
 }
 
 .container {
@@ -17,27 +19,46 @@ body {
   align-items: center;
   text-align: center;
 
-  margin-left: 0px;
-  margin-right: 0px;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
-h1 {font-size: 4.5rem; /* too large for mobile devices?*/
+/* ***************************************** HEADINGS *****************************************/
+
+/* default */
+h1 {font-size: 2.5rem; 
     background-color: #222;
     color: #fff;
     border-radius: .1rem;
-    font-weight: 600;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    letter-spacing: .1rem;
-    margin-bottom: 1.2rem;
+    padding-left: 0.5rem; 
+    padding-right: 0.5rem;
 }
 
 h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.2rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
 }
 
+/* large screen */
+@media (min-width: 30rem) {
+    h1 {
+        font-size: 4.5rem;
+        font-weight: 600;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        letter-spacing: .1rem;
+        margin-bottom: 1.2rem;
+    }
 
+    h2 {
+       font-size: 2.5rem;
+       margin-bottom: 1.2rem;
+       text-align: center;
+   }
+}
+
+/* ***************************************** OTHER *****************************************/
 a {
     color: #222;
 }
@@ -49,10 +70,9 @@ p {
 }
 
 img {
-   max-width: 600px;
-   width: 30rem;
    margin-top: 0.2rem;
    margin-bottom: 0.2rem;
+   max-width: 95vw;
 }
 
 ul {
