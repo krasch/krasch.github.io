@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/projects/face_recognition_game/style.css">
+    <title>The face recognition game </title>
+  </head>
+  <body>
+    <div class="container">
+        <h1> PROJECTS </h1>
+        <h2> The face recognition game </h2>
+        <p> <i> Letting people explore what parts of a face are important for a face recognition system by making them wear funny masks. </i> </p>
+
+        <ul>
+          <li> <a href="/projects/face_recognition_game"> Part I: Introduction </a> </li>
+          <li> <a href="/projects/face_recognition_game/magdeburg.html"> Part II: Running the game at KI&Wir Magdeburg </a> </li>
+          <li> <a href="/projects/face_recognition_game/details.html"> <b> Part III: Technical details of the implementation </b> </a> </li>
+        </ul>
+
+        <p> The following text presumes that you have read <a href="https://medium.com/@ageitgey/build-a-hardware-based-face-recognition-system-for-150-with-the-nvidia-jetson-nano-and-python-a25cb8c891fd"> Build a Hardware-based Face Recognition System for $150 with the Nvidia Jetson Nano and Python </a> or are already somewhat familiar with face recognition.
+
+        <h3> Hardware </h3> 
+
+
+        <p> Here’s what is needed to run the game: </p> 
+
+        <img src="/projects/face_recognition_game/hardware.jpg" alt="Image of Jetson nano, power supply, camera and presentation clicker."/>
+
+        <ul> 
+          <li> External display or TV </li> 
+          <li> Nvidia Jetson Nano, with fan installed </li> 
+          <li> 5V/4A power supply (see Jetson manual) </li> 
+          <li> Raspberry Pi V2.1, 8 MP 1080P camera </li> 
+          <li> Helpful: longer camera cable </li>
+          <li> Keyboard or presentation clicker thingy (provides the “Please register me” button) </li>
+        </ul>
+  
+        <p> Except for the screen (hopefully provided by the venue), everything fits into a tiny bag, perfect for traveling to conferences and 
+            similar events. Another big advantage of this setup is that everything runs offline, avoiding potentially shaky internet 
+            connections as well as privacy concerns.</p> 
+
+        <p> Both the fan and the external power supply (as opposed to the standard USB power supply) ensure that the system can keep running at
+            full power for a long time (longest I tested was ~6 hours, zero issues with the hardware observed). </p> 
+
+        <h3> Face recognition models </h3>
+
+        <p> The <a href="https://medium.com/@ageitgey/build-a-hardware-based-face-recognition-system-for-150-with-the-nvidia-jetson-nano-and-python-a25cb8c891fd"> original 
+            blogpost </a> uses dlibs HOG-based face detection model. While that model works very well when the person looks right into the camera, it has a lot of 
+            trouble detecting faces that are turned sideways to the camera, severely limiting the usability of the game. Instead I opted for dlibs CNN-based face 
+            detection model, which performs strong on both frontal as well as sideways faces (see here for a detailed comparison of different face detection models). </p> 
+
+        <p> I also switched out the feature extraction model original used in the tutorial for openface (for reasons that now unfortunately elude me). </p> 
+
+        <h3> Speeding it up </h3> 
+        <p> With a camera resolution of 1280x720 pixels and 1000 people registered in the face database, the face recognition takes roughly half a second per image 
+            (95% confidence interval: [0.479,0.482] seconds). The bulk of the processing is face detection (performed on downscaled 640x360 pixel image, on average
+            0.24 seconds per image). If more than one person stands in front of the camera, the total processing time increases by about 0.1 seconds per additional 
+            person (cropping and face-matching scale linearly with the number of persons, face detection and feature extraction are the same regardless of the number of persons). </p> 
+
+        <p> With at most two processed images per second, running face recognition in the same process as the camera+display routine would make for an unusable game. 
+            The image displayed would only be updated twice per second and would be running behind the actual user movements considerably. Such a low-framerate and long
+            delay is very noticeable and extremely irritating to users. </p> 
+
+        <p> Instead, I parallelized the game as follows: The main process takes care only of grabbing the image from the camera and displaying on the screen
+            (at a framerate of 25 frames/second). The recognition process receives images from the main process and returns the recognition results when finished. 
+            The main process only sends new work to the recognition process when the previous recognition is done. I initially tried to parallelize using threads 
+            rather than processes, but fell prey to some global lock somewhere in the depths of opencv. </p> 
+
+        <p> In effect, at a framerate of 25 frames/second, the camera+display is fast enough to mirror the user’s movements. Recognized face locations and matches 
+            are only updated roughly twice per second, i.e. the face bounding boxes might be out-of-sync by up to half a second. While this is slightly annoying, 
+            it is considerably less so than the out-of-sync camera image in the single-process implementation.</p>
+
+        <h3> Explicit registration </h3> 
+
+        <p> Rather than automatically adding people to the face database the first time they look into the camera, I opted for an explicit registration process: 
+            anybody that wants to play the game has to look right into the camera and press a button to add their face to the face database. The reasons for 
+            this choice were twofold: </p> 
+ 
+        <p> 1. Automatic registration resulted in people being added to the database multiple times, e.g. once without a mask, once wearing a mask. It was not 
+            possible to find a combination of thresholds that reliably distinguishes between “this is genuinely a new person” and “this is a known person but
+            currently wearing a mask”. During test runs, automatic registration resulted in situations where visitors would be matched with multiple versions of
+            themselves, which caused significant confusion for the visitors.</p> 
+
+        <p> To get explicit consent of visitors to store their personal data (something that several visitors indeed enquired about).</p> 
+
+        <h3> Source code </h3> 
+
+        <p> The source code is available on gitlab. Warning: documentation is in a terrible state (I am working on it), for now it might be best to  
+            reach out to me if you want to run the system.</p> 
+
+        <img src="/projects/face_recognition_game/BMBF_gefoerdert_2017_en.png" alt="Logo of BMBF" class="imgbmbf"/>
+
+       <a href="/"> home </a>
+
+   </div>
+  </body>
+</html>
