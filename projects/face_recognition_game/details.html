@@ -49,9 +49,11 @@
         <p> The <a href="https://medium.com/@ageitgey/build-a-hardware-based-face-recognition-system-for-150-with-the-nvidia-jetson-nano-and-python-a25cb8c891fd"> original 
             blogpost </a> uses dlibs HOG-based face detection model. While that model works very well when the person looks right into the camera, it has a lot of 
             trouble detecting faces that are turned sideways to the camera, severely limiting the usability of the game. Instead I opted for dlibs CNN-based face 
-            detection model, which performs strong on both frontal as well as sideways faces (see here for a detailed comparison of different face detection models). </p> 
+            detection model, which performs strong on both frontal as well as sideways faces (see <a href="https://www.learnopencv.com/face-detection-opencv-dlib-and-deep-learning-c-python/"> here </a> 
+            for a detailed comparison of different face detection models). </p> 
 
-        <p> I also switched out the feature extraction model original used in the tutorial for openface (for reasons that now unfortunately elude me). </p> 
+        <p> I also switched out the feature extraction model originally used in the tutorial for <a href="https://cmusatyalab.github.io/openface/"> openface</a> 
+            (for reasons that now unfortunately elude me). </p> 
 
         <h3> Speeding it up </h3> 
         <p> With a camera resolution of 1280x720 pixels and 1000 people registered in the face database, the face recognition takes roughly half a second per image 
