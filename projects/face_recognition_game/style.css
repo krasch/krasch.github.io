@@ -1,12 +1,5 @@
-.imagerow > img {
-  width: 7rem;
-  max-width: 20vw; /* for smaller devices */
-  margin-bottom: 0.1rem;
-  margin-top: 0.1rem;
-  margin-left: 0.1rem;
-  margin-right: 0.1rem;
+a {
+    color: #222;
 }
 
-.imgbmbf {
-  width: 15rem;
-}
+
