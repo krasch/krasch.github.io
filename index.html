@@ -1,44 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="header.css">
+    <link rel="stylesheet" type="text/css" href="layout.css">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>krasch.io homepage</title>
-  </head>
-  <body>
-    <div class="container"> 
-       <h1> PROJECTS </h1>
+    <title>Katharina Rasch - personal homepage</title>
+</head>
+<body>
 
-       <h2> <a href="http://un.krasch.io">  Behind the scenes of the UN Millennium Goal Development Report </a> </h2>
-       <p> Visualisation of the data quality of the 2015 UN Millennium Goal Development Report. Finalist at the <a href="https://worldstatisticsday.org/data-visualisation-challenge.html"> 2015 World Statistics Day Data Visualisation Challenge</a> </p>
+<div id="header">
+    <a href="#about"><h2>ABOUT</h2></a>
+    <a href="#projects"><h2>PROJECTS</h2></a>
+    <a href="#talks"><h2>TALKS</h2></a>
+    <a href="#workwithme"><h2>WORK WITH ME</h2></a>
+</div>
 
-       <h2> <a href="/projects/face_recognition_game/">The face recognition game </a> </h2>
-       <p> Letting people explore what parts of a face are important for a face recognition system by making them wear funny masks. </p>
+<div id="main">
 
-       <h2> Does face recognition work on generated faces? </h2>
-       <p> [coming soon] </p>
-
-       <h1> TALKS </h1>
-
-       <p> <b> Reproducibility in theory and in practice</b>, PyCon DE / PyData Berlin conference 2019,
-           <a href="https://github.com/krasch/presentations/blob/master/reproducibility_pydata2019.pdf">slides</a>, 
-           <a href="https://www.youtube.com/watch?v=Rb3_FTu7Ftc">video</a>
-       </p> 
-       
-       <p> <b> Fooling neural networks (adversarial images)</b>, Berlin Machine Learning meetup 2018, 
-           <a href="https://github.com/krasch/presentations/blob/master/adversarial.pdf">slides</a>
-       </p> 
-
-       <p> <b> What every data scientist should know about data anonymization</b>, PyData Berlin conference 2016,
-           <a href="https://github.com/krasch/presentations/blob/master/pydata_Berlin_2016.pdf">slides</a>,  
-           <a href="https://www.youtube.com/watch?v=O3hxp117EHs">video</a>
-       </p> 
-
-       <h1> ABOUT </h1>
-       <p> Freelance data scientist / researcher. You can reach me at hello@krasch.io </p>
-       <p> <a href="https://github.com/krasch/">github</a>, <a href="https://twitter.com/krasch_io"> twitter</a> </p>
-       <p> Data privacy: no data about you is stored when you visit this website, no trackers </p>
+    <div class="section" id="about-container">
+        <span class="anchor" id="about"></span>
+        <h1> ABOUT </h1>
+        <div class="side-by-side">
+            <img id="portrait" src="images/portrait.png" alt="picture of myself"/>
+            <div>
+                <h3>Dr. Katharina Rasch</h3>
+                <p>Data scientist | computer vision engineer | teacher</p>
+                <p>PhD Computer Science (KTH Stockholm)</p>
+                <p>Freelancer in Berlin &rarr; <a href="#workwithme">Work with me</a></p>
+                <br/>
+                <p>hello@krasch.io | <a href="https://github.com/krasch/">github</a> | <a
+                        href="https://twitter.com/krasch_io"> twitter</a></p>
+            </div>
+        </div>
     </div>
-  </body>
+
+    <div class="section">
+        <span class="anchor" id="projects"></span>
+        <h1> PROJECTS </h1>
+
+        <div class="side-by-side">
+            <div class="cell">
+                <a href="https://krasch.io/projects/face_recognition_game/" class="screenshot">
+                    <img src="images/projects/face-recognition-game.png" alt="screenshot of face recognition game/"/>
+                </a>
+                <div class="title">
+                    <a href="https://krasch.io/projects/face_recognition_game/">The face recognition game</a>
+                    <br/> &nbsp;
+                </div>
+                <a href="https://krasch.io/projects/face_recognition_game/" class="subtitle">
+                    Helping people explore the breaking points of a face recognition system
+                </a>
+            </div>
+
+            <div class="cell">
+                <a href="https://krasch.io/adversarial-tensorflowjs" class="screenshot">
+                    <img src="images/projects/adversarial-tensorflowjs.png"
+                         alt="screenshot of article on adversarial image generation"/>
+                </a>
+
+                <a href="https://krasch.io/adversarial-tensorflowjs" class="title">
+                    Generating adversarial images in the browser using tensorflow.js
+                </a>
+
+                <a href="https://krasch.io/adversarial-tensorflowjs" class="subtitle">
+                    Live demo + full code + details on memory management / async execution
+                </a>
+            </div>
+
+            <div class="cell">
+                <a href="https://krasch.io/hyreskartan" class="screenshot">
+                    <img src="images/projects/hyreskartan.png"
+                         alt="screenshot of article on hyreskartan data visualisation"/>
+                </a>
+                <div class="title">
+                    <a href="https://krasch.io/hyreskartan">Hyreskartan</a>
+                    <br/> &nbsp;
+                </div>
+                <a href="https://krasch.io/hyreskartan" class="subtitle">
+                    Where do you have a chance to get a rental apartment in Stockholm?
+                </a>
+            </div>
+
+            <div class="cell">
+                <a href="http://un.krasch.io" class="screenshot">
+                    <img src="images/projects/un.png" alt="screenshot of article on data visualisation for UN"/>
+                </a>
+                <a href="http://un.krasch.io" class="title">
+                    Behind the scenes of the UN Millennium Goal Development Report
+                </a>
+                <a href="http://un.krasch.io" class="subtitle">
+                    How much data is behind the report? How many people does it represent?
+                </a>
+            </div>
+        </div>
+
+    </div> <!-- projects -->
+
+    <div class="section">
+        <span class="anchor" id="talks"></span>
+        <h1> TALKS </h1>
+
+        <div class="side-by-side">
+            <div class="cell">
+                <a href="https://github.com/krasch/presentations/blob/master/reproducibility_pydata2019.pdf"
+                   class="screenshot">
+                    <img src="images/talks/reproducibility.png" alt="screenshot of talk on reproducibility"/>
+                </a>
+                <a href="https://github.com/krasch/presentations/blob/master/reproducibility_pydata2019.pdf"
+                   class="title">
+                    Reproducibility in theory and in practice
+                </a>
+                <div class="subtitle">PyCon DE / PyData Berlin 2019 <br/>
+                    <a href="https://www.youtube.com/watch?v=Rb3_FTu7Ftc">video</a>
+                    <a href="https://github.com/krasch/presentations/blob/master/reproducibility_pydata2019.pdf">slides</a>
+                </div>
+            </div>
+
+            <div class="cell">
+                <a href="https://github.com/krasch/presentations/blob/master/adversarial.pdf" class="screenshot">
+                    <img src="images/talks/adversarial.png" alt="screenshot of talk on adversarial images"/>
+                </a>
+                <a href="https://github.com/krasch/presentations/blob/master/adversarial.pdf" class="title">
+                    Fooling neural networks (adversarial images)
+                </a>
+                <div class="subtitle">Berlin Machine Learning Meetup 2018<br/>
+                    <a href="https://github.com/krasch/presentations/blob/master/adversarial.pdf">slides</a>
+                </div>
+            </div>
+
+            <div class="cell">
+                <a href="https://github.com/krasch/presentations/blob/master/pydata_Berlin_2016.pdf" class="screenshot">
+                    <img src="images/talks/anonymization.png" alt="screenshot of talk on data anonymization"/>
+                </a>
+                <a href="https://github.com/krasch/presentations/blob/master/pydata_Berlin_2016.pdf" class="title">
+                    What every data scientist should know about data anonymization
+                </a>
+                <div class="subtitle">PyData Berlin 2016 <br/>
+                    <a href="https://www.youtube.com/watch?v=O3hxp117EHs">video</a>
+                    <a href="https://github.com/krasch/presentations/blob/master/pydata_Berlin_2016.pdf">slides</a>
+                </div>
+            </div>
+
+            <div class="cell">
+                <a href="https://github.com/krasch/presentations/blob/master/unit_testing_data_science.pdf"
+                   class="screenshot">
+                    <img src="images/talks/testing.png" alt="screenshot of talk on unit testing"/>
+                </a>
+                <a href="https://github.com/krasch/presentations/blob/master/unit_testing_data_science.pdf"
+                   class="title">
+                    How I learned to stop worrying and love unit tests (for data scientists)
+                </a>
+                <div class="subtitle">DSSG Chicago 2015 <br/>
+                    <a href="https://github.com/krasch/presentations/blob/master/unit_testing_data_science.pdf">slides</a>
+                </div>
+            </div>
+
+        </div>
+    </div> <!-- talks-->
+
+    <div class="section">
+        <span class="anchor" id="workwithme"></span>
+        <h1> WORK WITH ME </h1>
+
+        <h3>Available for freelance projects in Berlin and remote</h3>
+
+        <ul>
+            <li>PhD in Computer Science</li>
+            <li>15 years of software engineering experience</li>
+            <li>including 6 years with a focus on data science / computer vision</li>
+            <li>previous clients include <a href="https://www.mobility.siemens.com">Siemens mobility</a>, <a
+                    href="https://www.miele.de/">Miele</a></li>
+        </ul>
+
+        <h3>What I can help you with:</h3>
+
+            <div class="service">
+                <strong>Building machine learning products</strong>
+                <div class="explanation">In my 15 years as a software engineer, I have
+                    had the chance to work with a lot of different technologies. As such, I can help you build products across
+                    the full stack: machine learning / computer vision (scikit-learn, pytorch, tensorflow, keras),
+                    backend (Python), frontend (HTML, CSS, Javascript), cloud deployment (AWS, azure).
+                    Can quickly get up-to-speed with technologies not listed here.
+                </div>
+            </div>
+
+            <div class="service">
+                <strong class="title">Software engineering best practices</strong>
+                <div class="explanation">
+                    I strongly believe that data science and machine learning benefit from
+                    practices already established in software engineering. Unit/integration tests help us build
+                    more robust products, continuous integration and deployment help avoid the "the notebook only runs
+                    on my machine" syndrome, code review helps teams build common knowledge about the data and
+                    its intricacies.
+                </div>
+            </div>
+
+            <div class="service">
+                <strong class="title">Training data acquisition</strong>
+                <div class="explanation">In most machine learning projects, getting more/better training data beats
+                    spending time on improving model architectures and hyperparameters.
+                    I have worked with in-house data collection/annotation (using standard + custom tooling), with
+                    crowd-sourcing
+                    and with synthetic image generation, and can help you design and execute your data acquisition
+                    strategy.
+                </div>
+            </div>
+
+            <div class="service">
+                <strong class="title">Mentoring</strong>
+                <div class="explanation">
+                    I have several years of teaching / mentoring experience, including a hands-on data science lab,
+                    that so far over 100 university+private students have taken. I would be happy to mentor
+                    any junior data scientists on your team in their day-to-day work. Also open to individual mentoring
+                    requests.
+                </div>
+            </div>
+
+            <h3>Contact</h3>
+            <div class="contact">If you are interested in working with me, just send a quick email to <strong>hello@krasch.io</strong>.<br/>
+                I'll be in touch to schedule an intro meeting!<br/></div>
+
+
+    </div> <!-- workwithme -->
+
+    <br/>
+    <hr/>
+    <div class="section">
+        <p>
+            Data privacy: anonymous website usage statistics are collected using <a href="https://plausible.io/">https://plausible.io/</a>
+        </p>
+    </div>
+</div>  <!-- main -->
+
+</body>
 </html>

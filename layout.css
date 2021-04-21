@@ -1,0 +1,80 @@
+#main {
+    /* center the page */
+    margin: 8rem auto 3rem auto;
+
+    /* two cells fit exactly next to each other */
+    max-width: 666px;
+}
+
+/* overwriting defaults because using flex-gap instead */
+h3, ul {
+    margin: 0;
+}
+
+/* page is separated into several sections with some gap between sections */
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* class is used in abouts, projects, talks sections to place things next to each other */
+.side-by-side {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    /* if there is not enough space: no longer side by side, but below each other, centered */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+img#portrait {
+    width: 230px;
+    padding-right: 2.5rem; /* need a larger gap here */
+}
+
+.cell{
+    width: 300px;
+    min-height: 300px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+
+.empty-cell { /* used as placeholder for alignment */
+    width: 300px;
+    height: 0;
+    padding: 20px;
+}
+
+.cell .screenshot {  /* cell - preview screenshot */
+    height: 200px;
+    display: flex;
+    align-items: center; /* important to overwrite stretch, otherwise image loses aspect ratio */
+    align-content: center;
+    justify-content: center;
+}
+
+.cell > .screenshot > img {
+    max-width: 100%;
+    max-height: 95%;
+}
+
+.cell .title, .cell .subtitle {  /* cell text */
+    padding-left: 3px;
+    width: 100%; /* needed so text alignment works */
+    text-align: left;
+}
+
+
+.service {
+    padding: 20px;   /* same as .cell */
+}
+
+

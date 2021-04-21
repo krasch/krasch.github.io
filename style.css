@@ -1,81 +1,43 @@
-/* ***************************************** CONTAINERS *****************************************/
-
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin:0px auto;
-
-  font-family: helvetica, arial, sans-serif;
-  color: #222;
-
-  max-width: 40rem;
-  margin-bottom: 3rem;
+    font-family: helvetica, arial, sans-serif;
+    color: #222;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
-/* ***************************************** HEADINGS *****************************************/
-
-/* default */
-h1 {font-size: 2.5rem; 
-    background-color: #222;
-    color: #fff;
-    border-radius: .1rem;
-    padding-left: 0.5rem; 
-    padding-right: 0.5rem;
-}
-
-h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    text-align: center;
-}
-
-/* large screen */
-@media (min-width: 30rem) {
-    h1 {
-        font-size: 4.5rem;
-        font-weight: 600;
-        padding-left: 2rem;
-        padding-right: 2rem;
-        letter-spacing: .1rem;
-        margin-bottom: 1.2rem;
-    }
-
-    h2 {
-       font-size: 2rem;
-       margin-bottom: 1.2rem;
-       text-align: center;
-   }
-}
-
-/* ***************************************** OTHER *****************************************/
 a {
     color: #222;
 }
 
-p {
-    margin-top: 0.4rem;
-    margin-bottom: 0.4rem;
-    text-align: justify;
-}
-
-img {
-   margin-top: 0.2rem;
-   margin-bottom: 0.2rem;
-   max-width: 95vw;
-}
-
 ul {
-   text-align: left;
+    list-style-type: circle;
 }
 
+
+.cell, .service {
+    border: #555 dotted 1px;
+    border-radius: 5px;
+}
+
+.cell .screenshot {
+    border: #efefef solid 0;
+    border-radius: 5px;
+}
+
+.cell .title {
+    font-weight: bold;
+}
+
+.cell .subtitle {
+    /*font-style: italic;*/
+}
+
+/*don't underline links in subtitle*/
+.cell .subtitle {
+    text-decoration: none;
+}
+
+
+hr {
+    width: 100%;
+    border-top: 1px solid #555;
+    border-bottom: none;
+}
