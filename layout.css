@@ -19,8 +19,34 @@ h3, ul {
     gap: 20px;
 }
 
-/* class is used in abouts, projects, talks sections to place things next to each other */
-.side-by-side {
+#about-container {
+    /*height: 180px;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    column-gap: 30px;
+
+    /* if there is not enough space: no longer side by side, but below each other, centered */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#about-container  img {
+    height: 180px;
+}
+
+#about-container-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.cell-container {
+
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -30,11 +56,6 @@ h3, ul {
     justify-content: center;
 }
 
-
-img#portrait {
-    width: 230px;
-    padding-right: 2.5rem; /* need a larger gap here */
-}
 
 .cell{
     width: 300px;
