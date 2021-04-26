@@ -41,7 +41,7 @@
 
 /* normal view at least two cells fit */
 /*mobile view: only one cell fits, everything should be centered */
-@media screen and (max-width: 675px) {
+@media screen and (max-width: 666px) {
     /* text should be centered in mobile view */
     #about-container {
         text-align: center;

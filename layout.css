@@ -3,7 +3,7 @@
     margin: 8rem auto 3rem auto;
 
     /* two cells fit exactly next to each other */
-    max-width: 675px;
+    max-width: 666px;
 }
 
 /* overwriting defaults because using flex-gap instead */
@@ -11,17 +11,15 @@ h3, ul {
     margin: 0;
 }
 
-/* page is separated into several sections with some gap between sections */
+/* page is separated into several sections with some gap between content in each section */
 .section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /*gap: 20px; does not work in safari */
-}
+    /* workaround for flexbox until safari supports gap in flexbox...*/
+    display: grid;
+    grid-template-columns: auto;
+    grid-auto-rows: auto;
+    gap: 20px;
 
-/* safari workaround */
-.section > * + *{
-    margin-top: 20px;
+    justify-items: center;
 }
 
 #about-container {
@@ -36,7 +34,6 @@ h3, ul {
     justify-content: center;
 }
 
-/* safari workaround */
 #about-container > img
 {
     margin-right: 30px;
@@ -58,21 +55,18 @@ h3, ul {
 
 .cell-container {
 
-    display: flex;
-    flex-direction: row;
-    gap: 20px; /* not supported on safari - ignoring the issue */
-
-    /* if there is not enough space: no longer side by side, but below each other, centered */
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-auto-rows: auto;
+    gap: 20px;
 }
 
-/* so that safari users see at least a few pixels gap
-   don't use the *>* notation here because it messes up the flex wrap, stuff not aligned nicely anymore
-*/
-.cell-container > * {
-    margin-left: 3px;
-    margin-top: 3px;
+/* if there is not enough space: no longer side by side, but below each other, centered */
+@media screen and (max-width: 666px) {
+    .cell-container {
+        grid-template-columns: auto;
+        justify-content: center;
+    }
 }
 
 .cell{
@@ -80,17 +74,11 @@ h3, ul {
     min-height: 300px;
     padding: 10px;
 
-    display: flex;
-    flex-direction: column;
-    /*gap: 0.5rem; not supported on safari*/
+    display: inline-grid;
+    grid-template-columns: auto;
+    grid-auto-rows: auto;
+    gap: 0.5rem;
 }
-
-/* safari workaround */
-.cell > * + *
-{
-    margin-top: 0.5rem;
-}
-
 
 .empty-cell { /* used as placeholder for alignment */
     width: 300px;
