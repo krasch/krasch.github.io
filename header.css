@@ -21,6 +21,9 @@
     padding-top: 2rem;
     padding-bottom: 2rem;
     font-size: 1.2rem;
+
+    /* wrapping text breaks the image below */
+    white-space: nowrap;
 }
 
 
@@ -46,8 +49,7 @@
     }
 
     #header {
-        column-gap: 1rem;
-
+        column-gap: 0.5rem;
     }
 
     /* because header text is smaller, also header size is smaller -> different anchor */
@@ -56,3 +58,21 @@
         margin-top: -6.5rem; /*same height as header (looked it up)*/
     }
 }
+
+/* normal view at least two cells fit */
+/*mobile view: only one cell fits, everything should be centered */
+@media screen and (max-width: 500px) {
+    /* two rows of header items */
+    #header {
+        grid-template-rows: auto auto;
+        grid-template-columns: auto auto;
+        justify-content: center;
+    }
+
+    /* because header text is smaller, also header size is smaller -> different anchor */
+    .anchor {
+        height: 6.8rem; /*same height as header (looked it up)*/
+        margin-top: -6.8rem; /*same height as header (looked it up)*/
+    }
+}
+
