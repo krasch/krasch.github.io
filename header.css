@@ -8,10 +8,10 @@
     z-index: 100;
 
     /* items in header are next to each other (if they fit) */
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    /*column-gap: 2rem; does not work in safari */
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 2rem;
 
     /* items in header should be centered horizontally and vertically */
     justify-content: center;
@@ -21,13 +21,6 @@
     padding-top: 2rem;
     padding-bottom: 2rem;
     font-size: 1.2rem;
-}
-
-
-/* safari workaround */
-#header > * + *
-{
-    margin-left: 2rem;
 }
 
 
