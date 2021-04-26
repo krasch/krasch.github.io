@@ -3,7 +3,7 @@
     margin: 8rem auto 3rem auto;
 
     /* two cells fit exactly next to each other */
-    max-width: 670px;
+    max-width: 675px;
 }
 
 /* overwriting defaults because using flex-gap instead */
