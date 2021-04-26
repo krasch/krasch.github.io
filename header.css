@@ -39,9 +39,9 @@
     visibility: hidden;
 }
 
-/* normal view at least 670 pixels wide -> two cells fit */
+/* normal view at least two cells fit */
 /*mobile view: only one cell fits, everything should be centered */
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 675px) {
     /* text should be centered in mobile view */
     #about-container {
         text-align: center;
