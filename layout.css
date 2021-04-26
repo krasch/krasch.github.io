@@ -3,7 +3,7 @@
     margin: 8rem auto 3rem auto;
 
     /* two cells fit exactly next to each other */
-    max-width: 666px;
+    max-width: 670px;
 }
 
 /* overwriting defaults because using flex-gap instead */
@@ -16,7 +16,12 @@ h3, ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    /*gap: 20px; does not work in safari */
+}
+
+/* safari workaround */
+.section > * + *{
+    margin-top: 20px;
 }
 
 #about-container {
@@ -25,12 +30,18 @@ h3, ul {
     display: flex;
     flex-direction: row;
     justify-items: center;
-    column-gap: 30px;
 
     /* if there is not enough space: no longer side by side, but below each other, centered */
     flex-wrap: wrap;
     justify-content: center;
 }
+
+/* safari workaround */
+#about-container > img
+{
+    margin-right: 30px;
+}
+
 
 #about-container  img {
     height: 180px;
@@ -49,13 +60,20 @@ h3, ul {
 
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 20px; /* not supported on safari - ignoring the issue */
 
     /* if there is not enough space: no longer side by side, but below each other, centered */
     flex-wrap: wrap;
     justify-content: center;
 }
 
+/* so that safari users see at least a few pixels gap
+   don't use the *>* notation here because it messes up the flex wrap, stuff not aligned nicely anymore
+*/
+.cell-container > * {
+    margin-left: 3px;
+    margin-top: 3px;
+}
 
 .cell{
     width: 300px;
@@ -64,7 +82,13 @@ h3, ul {
 
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    /*gap: 0.5rem; not supported on safari*/
+}
+
+/* safari workaround */
+.cell > * + *
+{
+    margin-top: 0.5rem;
 }
 
 
@@ -97,5 +121,3 @@ h3, ul {
 .service {
     padding: 20px;   /* same as .cell */
 }
-
-

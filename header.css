@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    column-gap: 2rem;
+    /*column-gap: 2rem; does not work in safari */
 
     /* items in header should be centered horizontally and vertically */
     justify-content: center;
@@ -24,6 +24,13 @@
 }
 
 
+/* safari workaround */
+#header > * + *
+{
+    margin-left: 2rem;
+}
+
+
 /* fake element so internal link goes to right part of page */
 .anchor {
     display: block;
@@ -32,9 +39,9 @@
     visibility: hidden;
 }
 
-/* normal view at least 724 pixels wide -> two cells fit */
+/* normal view at least 670 pixels wide -> two cells fit */
 /*mobile view: only one cell fits, everything should be centered */
-@media screen and (max-width: 666px) {
+@media screen and (max-width: 670px) {
     /* text should be centered in mobile view */
     #about-container {
         text-align: center;
