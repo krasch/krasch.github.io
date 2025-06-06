@@ -1,9 +1,13 @@
-#main {
+main {
     /* center the page */
     margin: 8rem auto 3rem auto;
 
     /* two cells fit exactly next to each other */
     max-width: 666px;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
 }
 
 /* overwriting defaults because using flex-gap instead */
@@ -11,62 +15,57 @@ h3, ul {
     margin: 0;
 }
 
-/* page is separated into several sections with some gap between content in each section */
-.section {
-    /* workaround for flexbox until safari supports gap in flexbox...*/
-    display: grid;
-    grid-template-columns: auto;
-    grid-auto-rows: auto;
-    gap: 20px;
+h1 {
+    margin: 1rem;
+}
 
-    justify-items: center;
+/* page is separated into several sections with some gap between content in each section */
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    align-items: center;
+    align-content: center;
+    text-align: center;
 }
 
 #about-container {
-    /*height: 180px;*/
-
     display: flex;
     flex-direction: row;
-    justify-items: center;
+    align-items: center; /* text should be vertically centered relative to img */
+    column-gap: 1rem;
 
-    /* if there is not enough space: no longer side by side, but below each other, centered */
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; /* to center img in mobile layout */
 }
 
-#about-container > img
-{
-    margin-right: 30px;
+#about-container > img {
+    height: 160px;
 }
 
-
-#about-container  img {
-    height: 180px;
-}
 
 #about-container-right {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 0.3rem;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-
-.cell-container {
-
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-auto-rows: auto;
-    gap: 20px;
+@media screen and (min-width: 666px) {
+    #about-container-right {
+        text-align: left;
+    }
 }
 
-/* if there is not enough space: no longer side by side, but below each other, centered */
-@media screen and (max-width: 666px) {
-    .cell-container {
-        grid-template-columns: auto;
-        justify-content: center;
-    }
+.cell-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    flex-wrap: wrap;
+    justify-content: center; /* horizontally center when wrapped */
 }
 
 .cell{
@@ -74,9 +73,8 @@ h3, ul {
     min-height: 300px;
     padding: 10px;
 
-    display: inline-grid;
-    grid-template-columns: auto;
-    grid-auto-rows: auto;
+    display: flex;
+    flex-direction: column;
     gap: 0.5rem;
 }
 
@@ -103,9 +101,4 @@ h3, ul {
     padding-left: 3px;
     width: 100%; /* needed so text alignment works */
     text-align: left;
-}
-
-
-.service {
-    padding: 20px;   /* same as .cell */
 }

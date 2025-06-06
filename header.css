@@ -1,4 +1,4 @@
-#header {
+header {
 
     /* header is always on top */
     position: fixed;
@@ -8,10 +8,10 @@
     z-index: 100;
 
     /* items in header are next to each other (if they fit) */
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: auto auto auto auto;
-    column-gap: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
 
     /* items in header should be centered horizontally and vertically */
     justify-content: center;
@@ -35,21 +35,10 @@
     visibility: hidden;
 }
 
-/* normal view at least two cells fit */
-/*mobile view: only one cell fits, everything should be centered */
 @media screen and (max-width: 666px) {
-    /* text should be centered in mobile view */
-    #about-container {
-        text-align: center;
-    }
-
     /* header text should be smaller so it fits next to each other */
-    #header h2 {
+    header h2 {
         font-size: 1rem;
-    }
-
-    #header {
-        column-gap: 0.5rem;
     }
 
     /* because header text is smaller, also header size is smaller -> different anchor */
@@ -59,20 +48,4 @@
     }
 }
 
-/* normal view at least two cells fit */
-/*mobile view: only one cell fits, everything should be centered */
-@media screen and (max-width: 500px) {
-    /* two rows of header items */
-    #header {
-        grid-template-rows: auto auto;
-        grid-template-columns: auto auto;
-        justify-content: center;
-    }
-
-    /* because header text is smaller, also header size is smaller -> different anchor */
-    .anchor {
-        height: 6.8rem; /*same height as header (looked it up)*/
-        margin-top: -6.8rem; /*same height as header (looked it up)*/
-    }
-}
 
